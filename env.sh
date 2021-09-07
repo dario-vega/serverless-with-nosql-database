@@ -1,3 +1,4 @@
+export APP_NAME="nosql_demos"
 CMP_ID=`oci iam compartment list --name  demonosql | jq -r '."data"[].id'`
 export COMP_ID=${CMP_ID-$OCI_TENANCY}
 export NOSQL_COMP_ID=${CMP_ID-$OCI_TENANCY}
