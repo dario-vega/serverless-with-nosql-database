@@ -221,7 +221,7 @@ class NoSQLShell(cmd2.Cmd):
         self.intro = 'Welcome to the NoSQL shell. Type help or ? to list commands\n'
         self.prompt = '<nosql> '
         shortcuts = cmd2.DEFAULT_SHORTCUTS
-        super().__init__(multiline_commands=['select', 'SELECT'], shortcuts=shortcuts, allow_cli_args=False)
+        super().__init__(multiline_commands=['select', 'SELECT', 'query_plan'], shortcuts=shortcuts, allow_cli_args=False)
 # DV END MOD
 
 
@@ -521,6 +521,7 @@ class NoSQLShell(cmd2.Cmd):
             print(err)
             return False # don't stop
     do_SELECT = do_select  # now "SELECT" is a synonym for "select"
+    do_exit = do_bye  # now "exit" is a synonym for "bye"
 # DV END MOD
 
 
