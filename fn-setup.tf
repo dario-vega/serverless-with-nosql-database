@@ -18,7 +18,7 @@ resource "null_resource" "demo-apiPush2OCIR" {
   }
 
   provisioner "local-exec" {
-    command = "fn build --verbose"
+    command = "fn build "
     working_dir = "functions-fn/api/demo-api/"
   }
 
@@ -43,7 +43,7 @@ resource "null_resource" "demo-keyval-loadPush2OCIR" {
   }
 
   provisioner "local-exec" {
-    command = "fn build --verbose"
+    command = "fn build "
     working_dir = "functions-fn/load/demo-keyval-load/"
   }
 
@@ -68,7 +68,7 @@ resource "null_resource" "demo-loadPush2OCIR" {
   }
 
   provisioner "local-exec" {
-    command = "fn build --verbose"
+    command = "fn build "
     working_dir = "functions-fn/load/demo-load/"
   }
 
