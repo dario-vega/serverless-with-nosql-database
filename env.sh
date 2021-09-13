@@ -19,8 +19,8 @@ echo $NOSQL_COMP_ID
 if [ ! -e ~/.ignore_serverless-with-nosql-database_conf_review ]
 then
   echo Validating YOUR Environment
-  TEST_NOSQLTABLES=`oci nosql table list --compartment-id $COMP_ID | jq '.data | length'`
-  TEST_FUNCTIONS=`oci fn application  list --compartment-id $COMP_ID | jq '.data | length'`
+  TEST_NOSQLTABLES=`oci nosql table list --compartment-id $COMP_ID | jq '.data.items[].name ' | wc -l`
+  TEST_FUNCTIONS=`oci fn application  list --compartment-id $COMP_ID | jq '.data[]."display-name"' |wc -l`
   if [ $TEST_NOSQLTABLES -le 0 ] || [ $TEST_FUNCTIONS -le 0 ]
   then
      echo "Please review the configuration"
