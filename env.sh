@@ -23,9 +23,9 @@ then
   TEST_FUNCTIONS=`oci fn application  list --compartment-id $COMP_ID | jq '.data[]."display-name"' |wc -l`
   if [ $TEST_NOSQLTABLES -le 0 ] || [ $TEST_FUNCTIONS -le 0 ]
   then
-     echo "Please review the configuration"
+     echo "ERROR: Please review the configuration"
   else
-     echo "configuration succesfully reviewed"
+     echo "Configuration succesfully reviewed"
      touch ~/.ignore_serverless-with-nosql-database_conf_review
   fi
 fi
