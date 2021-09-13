@@ -80,5 +80,6 @@ def get_handle():
      provider = borneo.iam.SignatureProvider.create_with_resource_principal()
      compartment_id = provider.get_resource_principal_claim(borneo.ResourcePrincipalClaimKeys.COMPARTMENT_ID_CLAIM_KEY)
 
-     config = borneo.NoSQLHandleConfig(os.getenv('NOSQL_REGION'), provider).set_logger(None).set_default_compartment(compartment_id)
+     #config = borneo.NoSQLHandleConfig(os.getenv('NOSQL_REGION'), provider).set_logger(None).set_default_compartment(compartment_id)
+     config = borneo.NoSQLHandleConfig(os.getenv('NOSQL_REGION'), provider).set_logger(None).set_default_compartment(os.getenv('NOSQL_COMPARTMENT_ID')
      return borneo.NoSQLHandle(config)
