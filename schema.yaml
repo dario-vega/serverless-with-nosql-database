@@ -70,7 +70,6 @@
         title: "NOSQL always free ?"
         description: "The NOSQL tables will create with the option always free"
         visible: true
-        default: true
         
     outputs:
 
