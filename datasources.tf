@@ -31,6 +31,9 @@ data "oci_identity_tenancy" "oci_tenancy" {
     tenancy_id = var.tenancy_ocid
 }
 
+data "oci_objectstorage_namespace" "test_namespace" {
+    compartment_id = var.tenancy_ocid
+}
 
 data "oci_nosql_table" "nosql_demo" {
   table_name_or_id = oci_nosql_table.nosql_demo.id
