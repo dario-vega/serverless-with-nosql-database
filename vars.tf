@@ -7,7 +7,7 @@ variable "ocir_repo_name" {
 }
 
 variable "always_free" {
-  default = "true"
+  default = "false"
 }
 
 variable "ocir_user_name" {
