@@ -9,12 +9,22 @@ export NOSQL_COMP_ID=${CMP_ID-$OCI_TENANCY}
 export NOSQL_USER_ID=`cat ~/info.json | jq -r '."data"."user-id"'`
 export NOSQL_FINGERPRINT=`cat ~/info.json | jq -r '."data"."fingerprint"'`
 export NOSQL_PRIVKEY_FILE=~/NoSQLLabPrivateKey.pem
-echo $OCI_REGION
-echo $OCI_TENANCY
-echo $NOSQL_USER_ID
-echo $NOSQL_FINGERPRINT
-echo $NOSQL_PRIVKEY_FILE
-echo $NOSQL_COMP_ID
+
+if [ $OCI_REGION == 'us-phoenix-1' ]
+then
+  export NOSQL_ALWAYS_FREE=true
+else
+  export NOSQL_ALWAYS_FREE=false
+fi
+
+echo "OCI_REGION: $OCI_REGION"
+echo "OCI_TENANCY: $OCI_TENANCY"
+echo "NOSQL_USER_ID: $NOSQL_USER_ID"
+echo "NOSQL_FINGERPRINT: $NOSQL_FINGERPRINT"
+echo "NOSQL_PRIVKEY_FILE: $NOSQL_PRIVKEY_FILE"
+echo "NOSQL_COMP_ID: $NOSQL_COMP_ID"
+echo "NOSQL_ALWAYS_FREE: $NOSQL_ALWAYS_FREE"
+
 
 if [ ! -e ~/.ignore_serverless-with-nosql-database_conf_review ]
 then
