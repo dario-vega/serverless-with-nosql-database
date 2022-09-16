@@ -8,7 +8,7 @@ resource oci_functions_application export_nosql_demos_1 {
   }
   defined_tags = {
   }
-  display_name = "nosql_demos"
+  display_name = "demo-events"
   freeform_tags = {
   }
   subnet_ids = [
