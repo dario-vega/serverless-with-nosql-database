@@ -3,7 +3,7 @@ variable compartment_ocid {  }
 variable "tenancy_ocid" {}
 
 variable "ocir_repo_name" {
-  default = "demonosql"
+  default = "demo-events"
 }
 
 variable "always_free" {
