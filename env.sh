@@ -1,4 +1,4 @@
-export APP_NAME="nosql_demos"
+export APP_NAME="demo-events"
 CMP_ID=`oci iam compartment list --name  demonosql | jq -r '."data"[].id'`
 if [ -z "$CMP_ID" ];  then unset CMP_ID  ; fi;
 # Advanced user, if you deploy in a compartment other than root or root/demonosql, change the following line with the good compartment_ocid and unconmmented
