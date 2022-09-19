@@ -60,7 +60,7 @@ resource oci_core_vcn export_vcn-baggage-tracking {
   ]
   compartment_id = var.compartment_ocid
   display_name = "vcn-baggage-tracking"
-  dns_label    = "vcnbaggagetracking"
+  dns_label    = "baggagetracking"
   #is_ipv6enabled = <<Optional value not found in discovery>>
 }
 
@@ -79,7 +79,7 @@ resource oci_core_default_dhcp_options export_Default-DHCP-Options-for-vcn-bagga
   options {
     #custom_dns_servers = <<Optional value not found in discovery>>
     search_domain_names = [
-      "vcnbaggagetracking.oraclevcn.com",
+      "baggagetracking.oraclevcn.com",
     ]
     #server_type = <<Optional value not found in discovery>>
     type = "SearchDomain"
