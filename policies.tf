@@ -16,8 +16,8 @@
 
 resource "oci_identity_dynamic_group" "FunctionsServiceDynamicGroup" {
   provider = oci.homeregion
-  name = "nosql_demos"
-  description = "nosql_demos"
+  name = "baggage-tracking"
+  description = "baggage-tracking (nosql demo)"
   compartment_id = var.tenancy_ocid
   matching_rule = "Any {\nALL {resource.type = 'ApiGateway', resource.compartment.id = '${var.compartment_ocid}'},\nALL {resource.type = 'fnfunc', resource.compartment.id = '${var.compartment_ocid}'}\n}"
   provisioner "local-exec" {
@@ -28,8 +28,8 @@ resource "oci_identity_dynamic_group" "FunctionsServiceDynamicGroup" {
 resource "oci_identity_policy" "FunctionsServiceDynamicGroupPolicy" {
   depends_on = [oci_identity_dynamic_group.FunctionsServiceDynamicGroup]
   provider = oci.homeregion
-  name = "nosql_demos_faas"
-  description = "nosql_demos_faas"
+  name = "baggage-tracking-faas"
+  description = "baggage-tracking-faas (nosql demo)"
   compartment_id = var.compartment_ocid
   statements = [
    "allow dynamic-group ${oci_identity_dynamic_group.FunctionsServiceDynamicGroup.name} to use functions-family  in compartment id ${var.compartment_ocid} "

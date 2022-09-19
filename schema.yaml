@@ -49,7 +49,7 @@
         required: true
         visibile: true
         title: "OCIR repository name"
-        description: "Oracle Cloud Infrastructure Registry repository name (for example nosql_demos)"
+        description: "Oracle Cloud Infrastructure Registry repository name (for example baggage-tracking)"
 
       ocir_user_name:
         type: string
