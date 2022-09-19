@@ -8,7 +8,7 @@ resource oci_functions_application export_baggage-tracking {
   }
   defined_tags = {
   }
-  display_name = "baggage-tracking-events"
+  display_name = "baggage-tracking"
   freeform_tags = {
   }
   subnet_ids = [
